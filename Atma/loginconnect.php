@@ -2,10 +2,10 @@
     session_start();
     include "dbconnect.php";
 	
-    if(isset($_GET['submit'])){
+    if(isset($_POST['submit'])){
 		echo "kashyap";
-        $username = $_GET["username"];
-        $password = $_GET["password"];
+        $username = $_POST["username"];
+        $password = $_POST["password"];
         $username = stripslashes($username);
         $password = stripslashes($password);
         $username = mysql_real_escape_string($username);

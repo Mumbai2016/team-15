@@ -34,7 +34,7 @@
     <p align="left" class="login-box-msg">Loginr</p>
 
 <<<<<<< HEAD
-    <form action="loginconnect.php" method="get">
+    <form action="loginconnect.php" method="POST">
       <div class="form-group has-feedback">
         <input type="text" name="username" class="form-control" placeholder="Username">
 =======
