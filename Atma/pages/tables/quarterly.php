@@ -605,9 +605,7 @@
                                             $q=4;
                                             }
                                             $sql = "SELECT *  FROM task where aip_id=".$aip." and quarter_no=".$q;
-											
                                             $result = mysql_query($sql, $conn);
-											echo $result;
                                             while($row = mysql_fetch_assoc($result)) {
                                             //$ngo = stripcslashes($row['ngo_username']);
                                             /*$desc = stripcslashes($row['goals_description']);
