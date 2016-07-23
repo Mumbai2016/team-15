@@ -556,7 +556,9 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
                               <h3 class="panel-title text-center" >'.$ngo.'s</h3>
                             </div>
                             <p><strong >Goal</strong>'.$desc.'</p>
-                              <a href="" class="btn btn-block btn-primary" target="_blank">More Info</a>
+                              <form >
+							  <input type="hidden" name="NGO" value="'.$ngo.'">
+							  <input type="submit" class="btn btn-block btn-primary" name="button" value="More Info"/>
                             </div>
                             </div>';
                 }
@@ -567,7 +569,7 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
       <!-- /.row -->
       <!-- Main row -->
             <div class="box-footer clearfix">
-              <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
+              <button type="button" class="pull-right btn btn-default" id="sendEmail" >Send
                 <i class="fa fa-arrow-circle-right"></i></button>
             </div>
           </div>

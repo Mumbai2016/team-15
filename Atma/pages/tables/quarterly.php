@@ -648,7 +648,7 @@
                             <!-- /.box -->
                         </div>
                     </div>
-					<div class="btn btn-primary pull-right">Assign new tasks</div>
+					<a href="" class="btn btn-primary pull-right" name=>Assign new tasks</a>
                 </section>
                 <!-- /.content -->
             </div>
