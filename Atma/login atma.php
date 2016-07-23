@@ -76,3 +76,35 @@
 </script>
 </body>
 </html>
+
+<?php
+    session_start();
+
+    if(isset($_SESSION['login_user'])){
+        include "dbconnect.php";
+        header("Location: index.php");
+    }
+    include "dbconnect.php";
+    if(isset($_POST["submit"])){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $username = stripslashes($username);
+        $password = stripslashes($password);
+        $username = mysql_real_escape_string($username);
+        $password = mysql_real_escape_string($password);
+        
+        if($username!="" && $password!=""){
+            $sql = "SELECT id, username, password  FROM `user` WHERE `username` LIKE '$username' AND `password` LIKE '$password'";
+            $result = mysql_query( $sql, $conn );
+            $num_rows = mysql_num_rows($result);
+            $row = mysql_fetch_assoc($result);
+            if($num_rows==1){
+                $_SESSION['login_user'] = $username;
+                $_SESSION['id'] = $row["id"];
+                header("Location: index.php");
+            }else{
+                echo "<script> alert('Username or password is incorrect')</script>";
+            }
+        }
+    }
+?>
