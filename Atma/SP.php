@@ -587,26 +587,29 @@
 							  </tr>
 							</thead>
 							<tbody>
+							<form action="/team-15/Atma/pages/tables/quarterly.php" method="GET">
 							  <tr>
-								<td><button class="btn btn-large btn-primary" action="quarterly.php" method="GET" name="11">Quaterly 1</button></td>
-								<td><button class="btn btn-large btn-success" action="quarterly.php" method="GET" name="12">Quaterly 1</button></td>
-								<td><button class="btn btn-large btn-warning" action="quarterly.php" method="GET" name="13">Quaterly 1</button></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 1 (1)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 1 (2)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 1 (3)"/></td>
 							  </tr>
 							  <tr>
-								<td><button class="btn btn-large btn-primary" action="quarterly.php" method="GET" name="21">Quaterly 2</button></td>
-								<td><button class="btn btn-large btn-success" action="quarterly.php" method="GET" name="22">Quaterly 2</button></td>
-								<td><button class="btn btn-large btn-warning" action="quarterly.php" method="GET" name="23">Quaterly 2</button></td>						  </tr>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 2 (1)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 2 (2)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 2 (3)"/></td>	
+								</tr>
 							  <tr>
-								<td><button class="btn btn-large btn-primary" action="quarterly.php" method="GET" name="31">Quaterly 3</button></td>
-								<td><button class="btn btn-large btn-success" action="quarterly.php" method="GET" name="32">Quaterly 3</button></td>
-								<td><button class="btn btn-large btn-warning" action="quarterly.php" method="GET" name="33">Quaterly 3</button></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 3 (1)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 3 (2)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 3 (3)"/></td>
 							  </tr>
 							  
 							  <tr>
-								<td><button class="btn btn-large btn-primary" action="quarterly.php" method="GET" name="41">Quaterly 4</button></td>
-								<td><button class="btn btn-large btn-success" action="quarterly.php" method="GET" name="42">Quaterly 4</button></td>
-								<td><button class="btn btn-large btn-warning" action="quarterly.php" method="GET" name="43">Quaterly 4</div></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 4 (1)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 4 (2)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 4 (3)"/></td>
 							  </tr>
+							</form>
 							</tbody>
 						  </table>
 
