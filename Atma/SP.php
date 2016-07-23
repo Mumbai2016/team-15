@@ -588,24 +588,24 @@
 							</thead>
 							<tbody>
 							  <tr>
-								<td><div class="btn btn-large btn-primary">Quaterly 1</div></td>
-								<td><div class="btn btn-large btn-success">Quaterly 1</div></td>
-								<td><div class="btn btn-large btn-warning">Quaterly 1</div></td>
+								<td><button class="btn btn-large btn-primary" action="quarterly.php" method="GET" name="11">Quaterly 1</button></td>
+								<td><button class="btn btn-large btn-success" action="quarterly.php" method="GET" name="12">Quaterly 1</button></td>
+								<td><button class="btn btn-large btn-warning" action="quarterly.php" method="GET" name="13">Quaterly 1</button></td>
 							  </tr>
 							  <tr>
-								<td><div class="btn btn-large btn-primary">Quaterly 2</div></td>
-								<td><div class="btn btn-large btn-success">Quaterly 2</div></td>
-								<td><div class="btn btn-large btn-warning">Quaterly 2</div></td>						  </tr>
+								<td><button class="btn btn-large btn-primary" action="quarterly.php" method="GET" name="21">Quaterly 2</button></td>
+								<td><button class="btn btn-large btn-success" action="quarterly.php" method="GET" name="22">Quaterly 2</button></td>
+								<td><button class="btn btn-large btn-warning" action="quarterly.php" method="GET" name="23">Quaterly 2</button></td>						  </tr>
 							  <tr>
-								<td><div class="btn btn-large btn-primary">Quaterly 3</div></td>
-								<td><div class="btn btn-large btn-success">Quaterly 3</div></td>
-								<td><div class="btn btn-large btn-warning">Quaterly 3</div></td>
+								<td><button class="btn btn-large btn-primary" action="quarterly.php" method="GET" name="31">Quaterly 3</button></td>
+								<td><button class="btn btn-large btn-success" action="quarterly.php" method="GET" name="32">Quaterly 3</button></td>
+								<td><button class="btn btn-large btn-warning" action="quarterly.php" method="GET" name="33">Quaterly 3</button></td>
 							  </tr>
 							  
 							  <tr>
-								<td><div class="btn btn-large btn-primary">Quaterly 4</div></td>
-								<td><div class="btn btn-large btn-success">Quaterly 4</div></td>
-								<td><div class="btn btn-large btn-warning">Quaterly 4</div></td>
+								<td><button class="btn btn-large btn-primary" action="quarterly.php" method="GET" name="41">Quaterly 4</button></td>
+								<td><button class="btn btn-large btn-success" action="quarterly.php" method="GET" name="42">Quaterly 4</button></td>
+								<td><button class="btn btn-large btn-warning" action="quarterly.php" method="GET" name="43">Quaterly 4</div></td>
 							  </tr>
 							</tbody>
 						  </table>

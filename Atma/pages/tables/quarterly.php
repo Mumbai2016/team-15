@@ -1,3 +1,5 @@
+<?php "../../dbconnect.php"?>
+<?php "../../check_login.php"?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -374,8 +376,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Simple Tables
-        <small>preview of simple tables</small>
+        Tasks
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -391,7 +392,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Quarterly Table</h3>
+              <h3 class="box-title">T</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -417,11 +418,42 @@
 				  <th>Status</th>
 				  <th>Resources</th>
                 </tr>
+				
+	<!---------------------------------------------------------------------------->
+	
+	<?php
+                include 'dbconnect.php';
+                $user = $_SESSION['login_user'];
+                $username = stripslashes($user);
+                $sql = "SELECT *  FROM `task` where ";
+                $result = mysql_query($sql, $conn);
+                while($row = mysql_fetch_assoc($result)) {
+                $ngo = stripcslashes($row['ngo_username']);
+                $desc = stripcslashes($row['goals_description']);
+
+                 
+                  echo '
+                  <div class="col-sm-4">
+                          <div class="panel">
+                            <div class="panel-heading">
+                              <h3 class="panel-title text-center" >'.$ngo.'s</h3>
+                            </div>
+                            <p><strong >Goal</strong>'.$desc.'</p>
+                              <a href="" class="btn btn-block btn-primary" target="_blank">More Info</a>
+                            </div>
+                            </div>';
+                }
+            ?>
+	
+	<!---------------------------------------------------------------------------->
+				
+				
+				
                 <tr>
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td><span class="label label-success"></span></td>
+                  <td></td>
                   <td></td>
                 </tr>
                 
