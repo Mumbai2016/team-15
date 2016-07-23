@@ -526,16 +526,16 @@
 							<h3 class="panel-title text-center" >Strategic Plan !</h3>
 						</div>
 						<div class="list-group">
-						<a href="#" class="list-group-item">
+						<a href="#mymodal" class="list-group-item" data-toggle="modal" role="button">
 						<h4 class="list-group-item-heading">Goal 1</h4>
 						
 						</a>
-						<a href="#" class="list-group-item">
+						<a href="#" class="list-group-item" data-toggle="modal" role="button">
 						<h4 class="list-group-item-heading">Item2</h4>
 						
 						</a>
 						
-						<a href="#" class="list-group-item">
+						<a href="#" class="list-group-item" data-toggle="modal" role="button">
 						<h4 class="list-group-item-heading">Item3</h4>
 						
 						</a>
@@ -543,10 +543,34 @@
 					</div>
 						<a href="" class="btn btn-block btn-primary" target="_blank">More Info</a>
 					</div>
+					
 				
 				
 				</div>
-				
+				<div class="modal fade" id="mymodal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button  class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Modal Window</h4>
+						</div>
+						<div class="modal-body">
+							<h4>Text in modal body</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<h4>Pop overs</h4>
+							
+							
+							
+						</div>
+						<div class="modal-footer">
+								<button class="btn btn-default" type="button" data-dismiss="modal">close</button>
+								<button class="btn btn-primary" type="button" data-dismiss="modal">Save Changes</button>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+			
 				<div class="col-sm-6">
 					<div class="panel">
 						<div class="panel-heading">
@@ -554,34 +578,40 @@
 						</div>
 						
 						
-					<div class="list-group">
-						<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">Quaterly 1</h4>
-						<p class="list-group-item-text">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-						
-						</a>
-						<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">Quaterly 2</h4>
-						<p class="list-group-item-text">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-						
-						</a>
-						
-						<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">Quaterly 3</h4>
-						<p class="list-group-item-text">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-						
-						</a>
-						
-						<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading">Quaterly 4</h4>
-						<p class="list-group-item-text">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-						
-						</a>
+						<table class="table table-bordered">
+							<thead>
+							  <tr>
+								<th style="font-size:20px">Year 1</th>
+								<th style="font-size:20px">Year 2</th>
+								<th style="font-size:20px">Year 3</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td><div class="btn btn-large btn-primary">Quaterly 1</div></td>
+								<td><div class="btn btn-large btn-success">Quaterly 1</div></td>
+								<td><div class="btn btn-large btn-warning">Quaterly 1</div></td>
+							  </tr>
+							  <tr>
+								<td><div class="btn btn-large btn-primary">Quaterly 2</div></td>
+								<td><div class="btn btn-large btn-success">Quaterly 2</div></td>
+								<td><div class="btn btn-large btn-warning">Quaterly 2</div></td>						  </tr>
+							  <tr>
+								<td><div class="btn btn-large btn-primary">Quaterly 3</div></td>
+								<td><div class="btn btn-large btn-success">Quaterly 3</div></td>
+								<td><div class="btn btn-large btn-warning">Quaterly 3</div></td>
+							  </tr>
+							  
+							  <tr>
+								<td><div class="btn btn-large btn-primary">Quaterly 4</div></td>
+								<td><div class="btn btn-large btn-success">Quaterly 4</div></td>
+								<td><div class="btn btn-large btn-warning">Quaterly 4</div></td>
+							  </tr>
+							</tbody>
+						  </table>
+
 					
-					</div>
-						<a href="" class="btn btn-block btn-warning" target="_blank">More Info</a>
-					</div>
-				
+					
 				
 				</div>
 				
@@ -589,38 +619,12 @@
 			
       <!-- /.row -->
       <!-- Main row -->
-            <div class="box-footer clearfix">
-              <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
-                <i class="fa fa-arrow-circle-right"></i></button>
-            </div>
+            
           </div>
 
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-5 connectedSortable">
-
-          <!-- Map box -->
-          <div class="box box-solid bg-light-blue-gradient">
-            <div class="box-header">
-              <!-- tools box -->
-              <div class="pull-right box-tools">
-                <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-                  <i class="fa fa-calendar"></i></button>
-                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-                  <i class="fa fa-minus"></i></button>
-              </div>
-              <!-- /. tools -->
-
-              <i class="fa fa-map-marker"></i>
-
-              <h3 class="box-title">
-                Visitors
-              </h3>
-            </div>
-            <div class="box-body">
-              <div id="world-map" style="height: 250px; width: 100%;"></div>
-            </div>
             <!-- /.box-body-->
             <div class="box-footer no-border">
               <div class="row">

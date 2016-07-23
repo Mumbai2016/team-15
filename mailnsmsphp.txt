@@ -1,0 +1,70 @@
+        $newsub = $stm['rtime']; // the time that needs to subtracted from the scheduled date this comes from the remindertime table 30 minutes 1 hour 2 hour ..etc 
+
+        $datetrue = $stm['signstart'] . ' ' . $stm['starttime']; //The schedule appointment time
+
+        $dateTime = new DateTime($datetrue, new DateTimeZone($stm['timez'])); //DateTimeZone is the timezone that the User is working in America/Los_Angeles or America/New York ...etc
+        $senddate1 = $dateTime->format("Y-m-d H:i"); //the date in the selected timezone
+        $date = date_create($senddate1);
+        $date1 = date_sub($date, date_interval_create_from_date_string($newsub)); //subtract the amount of time before the appontment time you  want the reminder sent
+        $senddate = date_format($date1, 'Y-m-d H:i'); //the datetime to send the reminder
+
+
+        if ($senddate == date('Y-m-d H:i')) { // if the date is equeal to the date and time right now then send the reminder
+
+            //get all the customers data to put in the message
+            echo $pid = $stm['pid']; // the agents id number
+
+
+            $emailORmessage = $stm["emailORmessage"];
+
+            if ($emailORmessage == 1) { //if 1 then send cell phone message
+                $textmsg = $stm["textmsg"]; // if textmsg is 1 yes send message
+                if ($textmsg == 1) {
+                    $servid = $stm["servid"];
+                    $domname = cellserver($servid, $db);
+                    $order = array(
+                        "(",
+                        ")",
+                        " ",
+                        "-");
+                    $replace = '';
+                    $cell = str_replace($order, $replace, $stm["cell"]);
+                    $emailaddress = $cell . $domname;
+
+                    //Now send message
+                    $signingid = $stm['id'];
+                    $to = $emailaddress;
+                    $subject = 'Reminder';
+                    $message = cellmessage($signingid, $db, $datetrue);
+                    $headers = 'From: rdkurth@gmail.com' . "\r\n" . 'Reply-To: rdkurth@gmail.com' .
+                        "\r\n" . 'X-Mailer: PHP/' . phpversion();
+
+                    mail($to, $subject, $message, $headers);
+                } //end if textmsg = 1
+
+
+            } else { //send email
+                $emailmsg = $stm["emailmsg"]; // if emailmsg is 1 yes send email
+
+                if ($emailmsg == 1) {
+                    $email1 = $stm["email1"];
+
+                    //Send the email
+
+
+                    $to = $email1;
+                    $subject = 'Appointment Reminder';
+                    $message = emailmessage($signingid, $db, $datetrue);
+                    $headers = 'From: rdkurth@gmail.com' . "\r\n" . 'Reply-To: rdkurth@gmail.com' .
+                        "\r\n" . 'X-Mailer: PHP/' . phpversion();
+
+                    mail($to, $subject, $message, $headers);
+                } //end if emailmsg = 1
+
+            }
+        } //end of if senddate =
+    } //end foreach
+
+
+    ?>
+php 
