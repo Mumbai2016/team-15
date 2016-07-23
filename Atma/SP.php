@@ -587,26 +587,29 @@
 							  </tr>
 							</thead>
 							<tbody>
+							<form action="/team-15/Atma/pages/tables/quarterly.php" method="GET">
 							  <tr>
-								<td><div class="btn btn-large btn-primary">Quaterly 1</div></td>
-								<td><div class="btn btn-large btn-success">Quaterly 1</div></td>
-								<td><div class="btn btn-large btn-warning">Quaterly 1</div></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 1 (1)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 1 (2)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 1 (3)"/></td>
 							  </tr>
 							  <tr>
-								<td><div class="btn btn-large btn-primary">Quaterly 2</div></td>
-								<td><div class="btn btn-large btn-success">Quaterly 2</div></td>
-								<td><div class="btn btn-large btn-warning">Quaterly 2</div></td>						  </tr>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 2 (1)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 2 (2)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 2 (3)"/></td>	
+								</tr>
 							  <tr>
-								<td><div class="btn btn-large btn-primary">Quaterly 3</div></td>
-								<td><div class="btn btn-large btn-success">Quaterly 3</div></td>
-								<td><div class="btn btn-large btn-warning">Quaterly 3</div></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 3 (1)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 3 (2)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 3 (3)"/></td>
 							  </tr>
 							  
 							  <tr>
-								<td><div class="btn btn-large btn-primary">Quaterly 4</div></td>
-								<td><div class="btn btn-large btn-success">Quaterly 4</div></td>
-								<td><div class="btn btn-large btn-warning">Quaterly 4</div></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 4 (1)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 4 (2)"/></td>
+								<td><input type="submit" class="btn btn-large btn-primary" name="Quarterly" value="Quarterly 4 (3)"/></td>
 							  </tr>
+							</form>
 							</tbody>
 						  </table>
 
