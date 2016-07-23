@@ -4,7 +4,8 @@ import java.io.IOException;
 
 
 
-public class BufferedReaderExample {
+public class BufferedReaderExample 
+{
 
 	public static void main(String[] args) {
 
