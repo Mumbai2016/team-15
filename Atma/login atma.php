@@ -27,26 +27,26 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>WELCOME TO ATMA LOGIN</b></a>
+    <b>WELCOME TO ATMA LOGIN</b>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p align="left" class="login-box-msg">Login as Volunteer</p>
+    <p align="left" class="login-box-msg">Loginr</p>
 
-    <form action="../../index2.html" method="post">
+    <form action="loginconnect.php" method="get">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="text" name="username" class="form-control" placeholder="Username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
         
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <input type="submit" name="submit" class="btn btn-primary btn-block btn-flat" value="hello"/>
         </div>
         <!-- /.col -->
       </div>
@@ -60,11 +60,11 @@
 <!-- /.login-box -->
 
 <!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="/team-15/Atma/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="/team-15/Atma/bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script src="/team-15/Atma/plugins/iCheck/icheck.min.js"></script>
 <script>
   $(function () {
     $('input').iCheck({
@@ -78,42 +78,6 @@
 </html>
 
 
-<?php
-    session_start();
 
-    if(isset($_SESSION['login_user'])){
-        include "dbconnect.php";
-        header("Location: index.php");
-    }
-    include "dbconnect.php";
-    if(isset($_POST["submit"])){
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        $username = stripslashes($username);
-        $password = stripslashes($password);
-        $username = mysql_real_escape_string($username);
-        $password = mysql_real_escape_string($password);
-        
-        if($username!="" && $password!=""){
-            $sql = "SELECT id, username, password  FROM `user` WHERE `username` LIKE '$username' AND `password` LIKE '$password'";
-            $result = mysql_query( $sql, $conn );
-            $num_rows = mysql_num_rows($result);
-            $row = mysql_fetch_assoc($result);
-            if($num_rows==1){
-                $_SESSION['login_user'] = $username;
-                $_SESSION['id'] = $row["username"];
-				if($row["user_type"]=="manager_profile")
-					header("Location: PMlogin.html");
-				else if($row["user_type"]=="ngo_profile")
-					header("Location: PMlogin.html");
-				else if($row["user_type"]=="volunteer_profile")
-					header("Location: PMlogin.html");
-                header("Location: index.php");
-            }else{
-                echo "<script> alert('Username or password is incorrect')</script>";
-            }
-        }
-    }
-?>
 
 
