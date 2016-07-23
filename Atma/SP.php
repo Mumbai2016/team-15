@@ -1,3 +1,4 @@
+<?php include "check_login.php";?>
 <!DOCTYPE html>
 <html>
 <head>
