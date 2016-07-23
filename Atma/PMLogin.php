@@ -535,8 +535,10 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
     <!-- Main content -->
        <!-- Small boxes (Stat box) -->
       
-				<div class="row" id="NGO">
-            
+				
+        <div class="row" id="NGO">
+          
+
             <?php
 
                 include 'dbconnect.php';
@@ -561,9 +563,27 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
                             </div>';
                 }
             ?>
+			       <button id = "sendReminder" name = "sendReminder" value="1" on-click = "sendRemider()">
+        Send Reminder
+      </button>   
+      <script type="text/javascript">
+        window.location.href = "php mailer/mailer1.php";
+
+      </script>
+
+
+      </div>
 			</div>
-			</div>
-			
+
+
+
+        
+        function sendReminder() {
+          window.location.href = "php mailer/mailer1.php";
+
+        }
+
+      </script>>	
       <!-- /.row -->
       <!-- Main row -->
             <div class="box-footer clearfix">
