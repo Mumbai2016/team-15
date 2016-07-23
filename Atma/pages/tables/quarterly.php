@@ -555,6 +555,8 @@
           <!-- /.box -->
         </div>
       </div>
+	  <div class="pull-right btn btn-primary">Assign New Task</div>
+	  
     </section>
     <!-- /.content -->
   </div>
