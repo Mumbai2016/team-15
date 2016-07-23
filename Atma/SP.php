@@ -1,4 +1,3 @@
-<?php include "check_login.php";?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -601,6 +600,12 @@
 								<td><div class="btn btn-large btn-primary">Quaterly 3</div></td>
 								<td><div class="btn btn-large btn-success">Quaterly 3</div></td>
 								<td><div class="btn btn-large btn-warning">Quaterly 3</div></td>
+							  </tr>
+							  
+							  <tr>
+								<td><div class="btn btn-large btn-primary">Quaterly 4</div></td>
+								<td><div class="btn btn-large btn-success">Quaterly 4</div></td>
+								<td><div class="btn btn-large btn-warning">Quaterly 4</div></td>
 							  </tr>
 							</tbody>
 						  </table>
