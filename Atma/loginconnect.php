@@ -3,7 +3,6 @@
     include "dbconnect.php";
 	
     if(isset($_POST['submit'])){
-		echo "kashyap";
         $username = $_POST["username"];
         $password = $_POST["password"];
         $username = stripslashes($username);
