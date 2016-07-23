@@ -31,7 +31,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p align="left" class="login-box-msg">Loginn</p>
+    <p align="left" class="login-box-msg">Login</p>
 
     
     <form action="loginconnect.php" method="POST">
