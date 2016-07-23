@@ -7,15 +7,15 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/team-15/Atma/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/team-15/Atma/dist//css/AdminLTE.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="../../plugins/iCheck/square/blue.css">
+  <link rel="stylesheet" href="/team-15/Atma/plugins/iCheck/square/blue.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,6 +77,7 @@
 </body>
 </html>
 
+
 <?php
     session_start();
 
@@ -100,7 +101,13 @@
             $row = mysql_fetch_assoc($result);
             if($num_rows==1){
                 $_SESSION['login_user'] = $username;
-                $_SESSION['id'] = $row["id"];
+                $_SESSION['id'] = $row["username"];
+				if($row["user_type"]=="manager_profile")
+					header("Location: PMlogin.html");
+				else if($row["user_type"]=="ngo_profile")
+					header("Location: PMlogin.html");
+				else if($row["user_type"]=="volunteer_profile")
+					header("Location: PMlogin.html");
                 header("Location: index.php");
             }else{
                 echo "<script> alert('Username or password is incorrect')</script>";
@@ -108,3 +115,5 @@
         }
     }
 ?>
+
+
