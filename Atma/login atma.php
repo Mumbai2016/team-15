@@ -27,15 +27,15 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>WELCOME TO ATMA LOGIN</b></a>
+    <b>WELCOME TO ATMA LOGIN</b>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p align="left" class="login-box-msg">Login as Volunteer</p>
 
-    <form action="../../index2.html" method="post">
+    <form action=" " method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="text" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -81,10 +81,7 @@
 <?php
     session_start();
 
-    if(isset($_SESSION['login_user'])){
-        include "dbconnect.php";
-        header("Location: index.php");
-    }
+    
     include "dbconnect.php";
     if(isset($_POST["submit"])){
         $username = $_POST["username"];
@@ -95,7 +92,7 @@
         $password = mysql_real_escape_string($password);
         
         if($username!="" && $password!=""){
-            $sql = "SELECT id, username, password  FROM `user` WHERE `username` LIKE '$username' AND `password` LIKE '$password'";
+            $sql = "SELECT id, username, password  FROM `login` WHERE `username` LIKE '$username' AND `password` LIKE '$password'";
             $result = mysql_query( $sql, $conn );
             $num_rows = mysql_num_rows($result);
             $row = mysql_fetch_assoc($result);
@@ -106,9 +103,11 @@
 					header("Location: PMlogin.html");
 				else if($row["user_type"]=="ngo_profile")
 					header("Location: PMlogin.html");
-				else if($row["user_type"]=="volunteer_profile")
+				else if($row["user_type"]=="volunteer_profile"){
+					echo $row["user_type"];
 					header("Location: PMlogin.html");
-                header("Location: index.php");
+				}
+                
             }else{
                 echo "<script> alert('Username or password is incorrect')</script>";
             }
