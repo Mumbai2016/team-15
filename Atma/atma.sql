@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2016 at 07:31 PM
+-- Generation Time: Jul 23, 2016 at 10:18 PM
 -- Server version: 5.6.25
 -- PHP Version: 5.6.11
 
@@ -32,17 +32,19 @@ CREATE TABLE IF NOT EXISTS `aip` (
   `annual_description` varchar(200) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
-  `year_no` enum('y1','y2','y3','') NOT NULL
+  `year_no` enum('y1','y2','y3','') NOT NULL,
+  `ngo_username` varchar(20) NOT NULL,
+  `goals_id` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `aip`
 --
 
-INSERT INTO `aip` (`strat_id`, `aip_id`, `annual_description`, `start_date`, `end_date`, `year_no`) VALUES
-(1, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', '2016-06-01', '2017-06-01', 'y1'),
-(1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', '2017-06-01', '2018-06-01', 'y2'),
-(1, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2018-06-01', '2019-06-01', 'y3');
+INSERT INTO `aip` (`strat_id`, `aip_id`, `annual_description`, `start_date`, `end_date`, `year_no`, `ngo_username`, `goals_id`) VALUES
+(1, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', '2016-06-01', '2017-06-01', 'y1', 'katalyst', 1),
+(1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', '2017-06-01', '2018-06-01', 'y2', 'katalyst', 1),
+(1, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2018-06-01', '2019-06-01', 'y3', 'katalyst', 1);
 
 -- --------------------------------------------------------
 
@@ -151,17 +153,18 @@ CREATE TABLE IF NOT EXISTS `strategies` (
   `strat_id` int(100) NOT NULL,
   `strat_description` varchar(200) NOT NULL,
   `start_date` date NOT NULL,
-  `end_date` date NOT NULL
+  `end_date` date NOT NULL,
+  `ngo_username` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `strategies`
 --
 
-INSERT INTO `strategies` (`goal_id`, `strat_id`, `strat_description`, `start_date`, `end_date`) VALUES
-(1, 1, 'Increase the incentives', '2016-06-01', '2019-06-01'),
-(2, 2, 'Organize events to gain funds', '2016-07-04', '2019-07-04'),
-(3, 3, 'Create offices in Chennai and Kerela', '2014-01-05', '2019-01-05');
+INSERT INTO `strategies` (`goal_id`, `strat_id`, `strat_description`, `start_date`, `end_date`, `ngo_username`) VALUES
+(1, 1, 'Increase the incentives', '2016-06-01', '2019-06-01', 'katalyst'),
+(2, 2, 'Organize events to gain funds', '2016-07-04', '2019-07-04', 'katalyst'),
+(3, 3, 'Create offices in Chennai and Kerela', '2014-01-05', '2019-01-05', 'katalyst');
 
 -- --------------------------------------------------------
 
@@ -178,16 +181,19 @@ CREATE TABLE IF NOT EXISTS `task` (
   `quarter_no` enum('q1','q2','q3','q4') NOT NULL,
   `volunteer_username` varchar(20) NOT NULL,
   `status` enum('Completed','Pending','Postponed','Aborted') NOT NULL,
-  `resources` varchar(500) NOT NULL
+  `resources` varchar(500) NOT NULL,
+  `ngo_username` varchar(20) NOT NULL,
+  `goals_id` int(100) NOT NULL,
+  `strat_id` int(100) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `task`
 --
 
-INSERT INTO `task` (`aip_id`, `task_id`, `task_description`, `start_date`, `end_date`, `quarter_no`, `volunteer_username`, `status`, `resources`) VALUES
-(1, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2016-06-01', '2016-07-01', 'q1', 'stg4040', 'Completed', 'Lorem'),
-(1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2016-10-01', '2016-10-01', 'q2', 'stg4040', 'Pending', 'Lorem');
+INSERT INTO `task` (`aip_id`, `task_id`, `task_description`, `start_date`, `end_date`, `quarter_no`, `volunteer_username`, `status`, `resources`, `ngo_username`, `goals_id`, `strat_id`) VALUES
+(1, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2016-06-01', '2016-07-01', 'q1', 'stg4040', 'Completed', 'Lorem', 'katalyst', 1, 1),
+(1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2016-10-01', '2016-10-01', 'q2', 'stg4040', 'Pending', 'Lorem', 'katalyst', 1, 1);
 
 -- --------------------------------------------------------
 
