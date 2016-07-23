@@ -548,7 +548,7 @@
                 include 'dbconnect.php';
                 $user = $_SESSION['login_user'];
                 $username = stripslashes($user);
-                $sql = "SELECT *  FROM `task` ";
+                $sql = "SELECT *  FROM `task` where ";
                 $result = mysql_query($sql, $conn);
                 while($row = mysql_fetch_assoc($result)) {
                 $ngo = stripcslashes($row['ngo_username']);
