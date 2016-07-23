@@ -1,3 +1,5 @@
+<?php "../../dbconnect.php"?>
+<?php "../../check_login.php"?>
 <!DOCTYPE html>
 <html>
 <head>
