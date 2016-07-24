@@ -689,7 +689,7 @@
 					<form action="" method="GET">
 					<div class="btn btn-primary pull-right">Assign new tasks</div>
 					</form>
->>>>>>> 36f6015f1b8fb8d03faa1592d840a9b99b02bafa
+
                 </section>
                 <!-- /.content -->
             </div>
@@ -889,4 +889,5 @@
 
 <?php include dbconnect.php
 $sql="INSERT INTO `atma`.`task` (`aip_id`, `task_id`, `task_description`, `start_date`, `end_date`, `quarter_no`, `volunteer_username`, `status`, `resources`) VALUES ("'.$_GET[aip_id].'", "'.$_GET[task_id].'", "'.$_GET[task_description].'", "'$_GET[start_date]'", "'$_GET[end_date]'", "'.$_GET[quarter_no].'", "'.$_GET[volunteer_username].'", "'.$_GET[status].'", "'.$_GET[resources].'")";
+mysql_query($sql, $conn);
 ?>
