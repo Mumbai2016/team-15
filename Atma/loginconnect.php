@@ -20,9 +20,9 @@
             if($num_rows==1){
                 $_SESSION['login_user'] = $username;
 				if($row["user_type"]=="manager_profile")
-					header("Location: PMlogin.html");
+					header("Location: PMlogin.php");
 				else if($row["user_type"]=="ngo_profile")
-					header("Location: PMlogin.html");
+					header("Location: /pages/forms/feedback-NGO.php");
 				else if($row["user_type"]=="volunteer_profile")
 					header("Location: PMlogin.html");
             }else{
