@@ -556,7 +556,7 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
                               <h3 class="panel-title text-center" >'.$ngo.'s</h3>
                             </div>
                             <p><strong >Goal</strong>'.$desc.'</p>
-                              <form >
+                              <form action="SP.php" method="GET">
 							  <input type="hidden" name="NGO" value="'.$ngo.'">
 							  <input type="submit" class="btn btn-block btn-primary" name="button" value="More Info"/>
                             </div>
