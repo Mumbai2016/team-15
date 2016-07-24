@@ -322,6 +322,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="header">MAIN NAVIGATION</li>
+
                         <li class="treeview">
                             <a href="#">
                             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -492,6 +493,7 @@
                         <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
                     </ul>
                 </section>
+
                 <!-- /.sidebar -->
             </aside>
             <!-- Content Wrapper. Contains page content -->
@@ -648,7 +650,46 @@
                             <!-- /.box -->
                         </div>
                     </div>
+
 					<a href="" class="btn btn-primary pull-right" name=>Assign new tasks</a>
+
+					<hr>
+					<div class="box-body table-responsive no-padding">
+                                    <table class="table table-hover">
+                                
+					<tr>
+                                            <th>AIP ID</th>
+                                            <th>Task ID</th>
+                                            <th>Task Description</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Quarter</th>
+                                            <th>Volunteer</th>
+                                            <th>Status</th>
+                                            <th>Resources</th>
+                                        </tr>
+										<tr>
+										<form action="" method="GET">
+                                              <td><input type="text" name="aip_id" class="form-control"></td>
+                                              <td><input type="text" name="task_id" class="form-control"></td>
+											  <td><input type="text" name="task_description" class="form-control"></td>
+                                              <td><input type="text" name="start_date" class="form-control"></td>
+                                              <td><input type="text" name="end_date" class="form-control"></td>
+                                              <td><input type="text" name="task_id" class="form-control"></td>
+                                              <td><input type="text" name="quarter_no" class="form-control"></td>
+                                              <td><input type="text" name="volunteer_username" class="form-control"></td>
+                                              
+                                              <td><input type="text" name="status" class="form-control"></td>
+                                              <td><input type="text" name="resources" class="form-control"></td>
+                                              
+                                            </tr>
+										</form>
+									</table>
+									</div>
+					<form action="" method="GET">
+					<div class="btn btn-primary pull-right">Assign new tasks</div>
+					</form>
+>>>>>>> 36f6015f1b8fb8d03faa1592d840a9b99b02bafa
                 </section>
                 <!-- /.content -->
             </div>
@@ -845,3 +886,7 @@
         <script src="../../dist/js/demo.js"></script>
     </body>
 </html>
+
+<?php include dbconnect.php
+$sql="INSERT INTO `atma`.`task` (`aip_id`, `task_id`, `task_description`, `start_date`, `end_date`, `quarter_no`, `volunteer_username`, `status`, `resources`) VALUES ("'.$_GET[aip_id].'", "'.$_GET[task_id].'", "'.$_GET[task_description].'", "'$_GET[start_date]'", "'$_GET[end_date]'", "'.$_GET[quarter_no].'", "'.$_GET[volunteer_username].'", "'.$_GET[status].'", "'.$_GET[resources].'")";
+?>
