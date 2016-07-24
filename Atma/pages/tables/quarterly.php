@@ -713,6 +713,9 @@
 </html>
 <?php
 $sql="INSERT INTO task (aip_id,task_id, task_description, start_date, end_date, quarter_no, volunteer_username, status, resources) VALUES ('".$_GET[app_id]."','".$_GET[task_id]."','".$_GET[task_description]."','".$_GET[start_date]."','".$_GET[end_date]."','".$_GET[quarter_no]."','".$_GET[volunteer_username]."','".$_GET[status]."','".$_GET[resources]."')";
-if(mysql_query($sql, $conn)){
-echo "Inserted!!!"};
+echo "Inserted!!!"
+//if(mysql_query($sql, $conn))
+//
+//echo "Inserted!!!"
+//;
 ?>
