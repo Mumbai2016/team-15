@@ -20,7 +20,7 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title>ATMA | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -63,7 +63,7 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>ATMA</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -556,7 +556,9 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
                               <h3 class="panel-title text-center" >'.$ngo.'s</h3>
                             </div>
                             <p><strong >Goal</strong>'.$desc.'</p>
-                              <a href="" class="btn btn-block btn-primary" target="_blank">More Info</a>
+                              <form action="SP.php" method="GET">
+							  <input type="hidden" name="NGO" value="'.$ngo.'">
+							  <input type="submit" class="btn btn-block btn-primary" name="button" value="More Info"/>
                             </div>
                             </div>';
                 }
@@ -567,7 +569,7 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
       <!-- /.row -->
       <!-- Main row -->
             <div class="box-footer clearfix">
-              <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
+              <button type="button" class="pull-right btn btn-default" id="sendEmail" >Send
                 <i class="fa fa-arrow-circle-right"></i></button>
             </div>
           </div>
