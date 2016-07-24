@@ -1,5 +1,13 @@
 <?php
   include 'check_login.php';
+  
+  include 'dbconnect.php';
+  $uname=$_SESSION['login_user'];
+  $sql="select user_type from login where username='".$uname."'";
+  $result = mysql_query( $sql, $conn );
+  $row = mysql_fetch_assoc($result);
+  $user_type=$row["user_type"];
+?>
 ?>
 <?php
 $con=mysqli_connect("localhost","root","","atma");
