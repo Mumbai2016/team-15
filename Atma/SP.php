@@ -1,5 +1,6 @@
 <?php
   include 'check_login.php';
+  include 'dbconnect.php'
 ?>
 
 <!DOCTYPE html>
@@ -475,7 +476,45 @@
             <div class="box-footer text-black">
               <div class="row">
                 <div class="col-sm-6">
-                  <!-- Progress bars -->
+				
+				
+				
+				
+				
+				<?php 
+				$ngo=$_GET["NGO"];
+				$sql="select strat_id from strategies where ngo_username='".$ngo."'";
+				$result = mysql_query( $sql, $conn );
+				$num_rows = mysql_num_rows($result);
+				//$row = mysql_fetch_assoc($result);
+				 while($row = mysql_fetch_assoc($result)) 
+				{
+					$sql2="select count(*) from task where ngo_username='".$ngo."' and strat_id=".$row["strat_id"]." and status!='Completed'" ;
+					$result2=mysql_query($sql2,$conn);
+					$num_rows2=mysql_num_rows($result2);
+					//echo '<h1>'.$num_rows2.'</h1>';
+					$sql3="select count(*) from task where ngo_username='".$ngo."' and strat_id=".$row["strat_id"]." and status='Completed'";
+					$result3=mysql_query($sql2,$conn);
+					$num_rows3=mysql_num_rows($result3);
+					$per=(($result3)*100)/($result2+$result3);
+					echo '<div class="clearfix">
+                    <span class="pull-left">'.$row["strat_id"].'</span>
+                    <small class="pull-right">'.$per.'%</small>
+                  </div>
+                  <div class="progress xs">
+                    <div class="progress-bar progress-bar-green" style="width: '.$per.'%;"></div>
+                  </div>';
+					
+				}
+				?>
+				
+				
+				
+				
+				
+				
+				
+                  <!-- Progress bars --
                   <div class="clearfix">
                     <span class="pull-left">Task #1</span>
                     <small class="pull-right">90%</small>
@@ -492,7 +531,7 @@
                     <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
                   </div>
                 </div>
-                <!-- /.col -->
+                <!-- /.col --
                 <div class="col-sm-6">
                   <div class="clearfix">
                     <span class="pull-left">Task #3</span>
@@ -510,7 +549,7 @@
                     <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
                   </div>
                 </div>
-                <!-- /.col -->
+                 -->
               </div>
               <!-- /.row -->
             </div>
