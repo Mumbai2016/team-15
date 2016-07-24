@@ -1,5 +1,11 @@
 <?php
   include 'check_login.php';
+  include 'dbconnect.php';
+  $uname=$_SESSION['login_user'];
+  $sql="select user_type from login where username='".$uname."'";
+  $result = mysql_query( $sql, $conn );
+  $row = mysql_fetch_assoc($result);
+  $user_type=$row["user_type"];
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +56,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>ATMA</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -258,7 +264,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?php echo $uname;?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -266,22 +272,14 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  <?php echo $uname;?>
+                  <small></small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
+                  
                 </div>
                 <!-- /.row -->
               </li>
@@ -314,8 +312,8 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <p><?php echo $uname;?></p>
+          <a href="#"><i class="fa fa-circle text-success"></i><?php echo $user_type;?></a>
         </div>
       </div>
       <!-- search form -->
@@ -557,7 +555,38 @@
             <div class="box-footer text-black">
               <div class="row">
                 <div class="col-sm-6">
-                  <!-- Progress bars -->
+				
+				<?php 
+				$ngo=$_GET["NGO"];
+				$sql="select strat_id from strategies where ngo_username='".$ngo."'";
+				$result = mysql_query( $sql, $conn );
+				$num_rows = mysql_num_rows($result);
+				//$row = mysql_fetch_assoc($result);
+				 while($row = mysql_fetch_assoc($result)) 
+				{
+					$sql2="select count(*) from task where ngo_username='".$ngo."' and strat_id=".$row["strat_id"]." and status!='Completed'" ;
+					$result2=mysql_query($sql2,$conn);
+					$num_rows2=mysql_num_rows($result2);
+					//echo '<h1>'.$num_rows2.'</h1>';
+					$sql3="select count(*) from task where ngo_username='".$ngo."' and strat_id=".$row["strat_id"]." and status='Completed'";
+					$result3=mysql_query($sql2,$conn);
+					$num_rows3=mysql_num_rows($result3);
+					$per=(($result3)*100)/($result2+$result3);
+					echo '<div class="clearfix">
+                    <span class="pull-left">'.$row["strat_id"].'</span>
+                    <small class="pull-right">'.$per.'%</small>
+                  </div>
+                  <div class="progress xs">
+                    <div class="progress-bar progress-bar-green" style="width: '.$per.'%;"></div>
+                  </div>';
+					
+				}
+				?>
+				
+				
+				
+				
+                  <!-- Progress bars ----------------------------------------------------------
                   <div class="clearfix">
                     <span class="pull-left">Task #1</span>
                     <small class="pull-right">90%</small>
@@ -574,7 +603,7 @@
                     <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
                   </div>
                 </div>
-                <!-- /.col -->
+                <!-- /.col--------------------------------
                 <div class="col-sm-6">
                   <div class="clearfix">
                     <span class="pull-left">Task #3</span>
