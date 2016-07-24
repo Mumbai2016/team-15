@@ -506,7 +506,7 @@
                                               <td><input type="text" name="volunteer_username" class="form-control"></td>
                                               
                                               <td><input type="text" name="status" class="form-control"></td>
-                                              <td><input type="text" name="resources" class="form-control"></td>
+                                              
                                               
                                             </tr>
 										</form>
