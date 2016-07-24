@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 <?php
   include 'check_login.php';
 ?>
 
+=======
+<?php include check_login.php?>
+>>>>>>> 697028b3fd8f8a30db09f0d4a3e9e000ccc43074
 <!DOCTYPE html>
 <html>
 <head>
