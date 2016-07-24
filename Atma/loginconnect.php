@@ -22,11 +22,8 @@
 				if($row["user_type"]=="manager_profile")
 					header("Location: PMlogin.php");
 				else if($row["user_type"]=="ngo_profile")
-<<<<<<< HEAD
 					header("Location: PMlogin.php");
-=======
 					header("Location: /pages/forms/feedback-NGO.php");
->>>>>>> 697028b3fd8f8a30db09f0d4a3e9e000ccc43074
 				else if($row["user_type"]=="volunteer_profile")
 					header("Location: PMlogin.php");
             }else{
