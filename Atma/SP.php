@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 <?php
   include 'check_login.php';
 ?>
 
-=======
-<?php include check_login.php?>
->>>>>>> 697028b3fd8f8a30db09f0d4a3e9e000ccc43074
 <!DOCTYPE html>
 <html>
 <head>
@@ -772,7 +768,7 @@
               Expose author name in posts
               <input type="checkbox" class="pull-right" checked>
             </label>
-	--->
+	
             <p>
               Allow the user to show his name in blog posts
             </p>
