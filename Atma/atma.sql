@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.12
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2016 at 01:14 AM
--- Server version: 5.6.25
--- PHP Version: 5.6.11
+-- Generation Time: Jul 24, 2016 at 07:59 AM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -45,6 +45,39 @@ INSERT INTO `aip` (`strat_id`, `aip_id`, `annual_description`, `start_date`, `en
 (1, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', '2016-06-01', '2017-06-01', 'y1', 'katalyst', 1),
 (1, 2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', '2017-06-01', '2018-06-01', 'y2', 'katalyst', 1),
 (1, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2018-06-01', '2019-06-01', 'y3', 'katalyst', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `by_ngo`
+--
+
+CREATE TABLE IF NOT EXISTS `by_ngo` (
+  `feedback` varchar(500) NOT NULL,
+  `username` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `by_pm`
+--
+
+CREATE TABLE IF NOT EXISTS `by_pm` (
+  `feedback` varchar(500) NOT NULL,
+  `username` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `by_vol`
+--
+
+CREATE TABLE IF NOT EXISTS `by_vol` (
+  `feedback` varchar(500) NOT NULL,
+  `username` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -155,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `strategies` (
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
   `ngo_username` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `strategies`
@@ -164,7 +197,8 @@ CREATE TABLE IF NOT EXISTS `strategies` (
 INSERT INTO `strategies` (`goal_id`, `strat_id`, `strat_description`, `start_date`, `end_date`, `ngo_username`) VALUES
 (1, 1, 'Increase the incentives', '2016-06-01', '2019-06-01', 'katalyst'),
 (2, 2, 'Organize events to gain funds', '2016-07-04', '2019-07-04', 'katalyst'),
-(3, 3, 'Create offices in Chennai and Kerela', '2014-01-05', '2019-01-05', 'katalyst');
+(3, 3, 'Create offices in Chennai and Kerela', '2014-01-05', '2019-01-05', 'katalyst'),
+(5, 5, 'School ', '2016-07-20', '2016-07-12', 'prachi');
 
 -- --------------------------------------------------------
 
@@ -406,7 +440,7 @@ ALTER TABLE `goals`
 -- AUTO_INCREMENT for table `strategies`
 --
 ALTER TABLE `strategies`
-  MODIFY `strat_id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `strat_id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `task`
 --
