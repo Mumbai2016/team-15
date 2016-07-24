@@ -1,11 +1,6 @@
 <?php
   include 'check_login.php';
-  include 'dbconnect.php';
-  $uname=$_SESSION['login_user'];
-  $sql="select user_type from login where username='".$uname."'";
-  $result = mysql_query( $sql, $conn );
-  $row = mysql_fetch_assoc($result);
-  $user_type=$row["user_type"];
+  include 'dbconnect.php'
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +51,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>ATMA</b></span>
+      <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -264,7 +259,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $uname;?></span>
+              <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -272,14 +267,22 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  <?php echo $uname;?>
-                  <small></small>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
-                  
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
                 </div>
                 <!-- /.row -->
               </li>
@@ -312,22 +315,10 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?php echo $uname;?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i><?php echo $user_type;?></a>
+          <p>Alexander Pierce</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
@@ -337,51 +328,11 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>Layout Options</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
-          </a>
-                    <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li>
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
             </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+            <li><a href="PMLogin.php"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
-        <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-      </ul>
+        </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -404,59 +355,29 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       
-        <div class="row" id="SP">
+         <div class="row" id="SP">
 				<div class="col-sm-6">
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title text-center" >Strategic Plan !</h3>
+							<h3 class="panel-title text-center" >Strategic Plan </h3>
 						</div>
 						<div class="list-group">
 						<a href="#mymodal" class="list-group-item" data-toggle="modal" role="button">
-						<h4 class="list-group-item-heading">
-              
-            </h4>
-					<?php 
-                include 'dbconnect.php';
-                $user = $_SESSION['login_user'];
-                $username = stripslashes($user);
-                $ngo_username = $_GET["NGO"];
-                $sql = "SELECT *  FROM `goals` WHERE `pm_username` LIKE '$username' AND `ngo_username` LIKE '$ngo_username'";
-                $result = mysql_query($sql, $conn);
-                while($row = mysql_fetch_assoc($result)) {
-                  $goal_id = $row['goals_id'];
-
-                  $inner_sql = "SELECT *  FROM `strategies` WHERE `goal_id` LIKE '$goal_id'";
-                  $res = mysql_query($inner_sql, $conn);
-                  $s_index = 0; 
-                  while ($inner_row = mysql_fetch_assoc($res)) {
-                    $strat_desc = $inner_row['strat_description'];
-                    $s_index = $s_index+1;
-                    echo '<div class="modal fade" id="mymodal">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button  class="close" data-dismiss="modal">&times;</button>
-                                  <h4 class="modal-title">'.'Startegy'.$s_index.'</h4>
-                                </div>
-                                <div class="modal-body">
-                                  <p>'.$strat_desc.'</p>                                  
-                                </div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-default" type="button" data-dismiss="modal">close</button>
-                                </div>
-                                
-                              </div>
-                            </div>
-                          </div>';
-                    
-                  }
-                 
-                  
-                }
-
-              ?>
+						<h4 class="list-group-item-heading">Strategic Goal </h4>
+						
+						</a>
+						<a href="#" class="list-group-item" data-toggle="modal" role="button">
+						<h4 class="list-group-item-heading">Organizational Goal</h4>
+						
+						</a>
+						
+						<a href="#" class="list-group-item" data-toggle="modal" role="button">
+						<h4 class="list-group-item-heading">Social Goal</h4>
+						
+						</a>
+					
 					</div>
-						<a href="#mymodal" class="btn btn-block btn-primary" target="_blank">More Info</a>
+						<a href="" class="btn btn-block btn-primary" target="_blank">More Info</a>
 					</div>
 					
 				
@@ -467,11 +388,11 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<button  class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">Modal Window</h4>
+							<h4 class="modal-title">Goal Strategy</h4>
 						</div>
 						<div class="modal-body">
-							<h4>Text in modal body</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<h4></h4>
+							<p></p>
 							<h4>Pop overs</h4>
 							
 							
@@ -479,7 +400,7 @@
 						</div>
 						<div class="modal-footer">
 								<button class="btn btn-default" type="button" data-dismiss="modal">close</button>
-								<button class="btn btn-primary" type="button" data-dismiss="modal">Save Changes</button>
+								
 							</div>
 						
 					</div>
@@ -556,6 +477,10 @@
               <div class="row">
                 <div class="col-sm-6">
 				
+				
+				
+				
+				
 				<?php 
 				$ngo=$_GET["NGO"];
 				$sql="select strat_id from strategies where ngo_username='".$ngo."'";
@@ -586,7 +511,10 @@
 				
 				
 				
-                  <!-- Progress bars ----------------------------------------------------------
+				
+				
+				
+                  <!-- Progress bars --
                   <div class="clearfix">
                     <span class="pull-left">Task #1</span>
                     <small class="pull-right">90%</small>
@@ -603,7 +531,7 @@
                     <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
                   </div>
                 </div>
-                <!-- /.col--------------------------------
+                <!-- /.col --
                 <div class="col-sm-6">
                   <div class="clearfix">
                     <span class="pull-left">Task #3</span>
@@ -621,7 +549,7 @@
                     <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
                   </div>
                 </div>
-                <!-- /.col -->
+                 -->
               </div>
               <!-- /.row -->
             </div>
