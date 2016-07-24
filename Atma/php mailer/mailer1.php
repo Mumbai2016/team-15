@@ -55,6 +55,6 @@ $mailer->isHTML(true); //Mail body contains HTML tags
 if(!$mailer->send()) {
     echo 'Error sending mail : ' . $mailer->ErrorInfo;
 } else {
-    echo 'Message sent !';
+    header('/../PMLogin.php');
 }
 ?>

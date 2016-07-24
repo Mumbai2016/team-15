@@ -20,7 +20,7 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ATMA | Dashboard</title>
+  <title>AdminLTE 2 | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -63,7 +63,7 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>ATMA</b></span>
+      <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -535,10 +535,8 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
     <!-- Main content -->
        <!-- Small boxes (Stat box) -->
       
-				
-        <div class="row" id="NGO">
-          
-
+				<div class="row" id="NGO">
+            
             <?php
 
                 include 'dbconnect.php';
@@ -558,27 +556,21 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
                               <h3 class="panel-title text-center" >'.$ngo.'s</h3>
                             </div>
                             <p><strong >Goal</strong>'.$desc.'</p>
-                              <form action="SP.php" method="GET">
-							  <input type="hidden" name="NGO" value="'.$ngo.'">
-							  <input type="submit" class="btn btn-block btn-primary" name="button" value="More Info"/>
+                            <form action = "SP.php" method = "GET">
+                              <input type = "hidden" name = "NGO" value = "'.$ngo.'">
+                              <input type = "submit" class = "btn btn-block btn-primary" name = "button" value = "More Info">
                             </div>
                             </div>';
                 }
             ?>
-			       <button id = "sendReminder" name = "sendReminder" value="1" on-click = "sendRemider()">
-        Send Reminder
-      </button>   
-      <script type="text/javascript">
-        window.location.href = "php mailer/mailer1.php";
-
-      </script>
-
-
-      </div>
+			</div>
 			</div>
 
 
-
+      <button id = "sendReminder" name = "sendReminder" value="1" on-click = "sendRemider()">
+        Send Reminder
+      </button>		
+      <script type="text/javascript">
         
         function sendReminder() {
           window.location.href = "php mailer/mailer1.php";
@@ -589,7 +581,7 @@ mysqli_query($con,"SELECT * FROM volunteer_profile");
       <!-- /.row -->
       <!-- Main row -->
             <div class="box-footer clearfix">
-              <button type="button" class="pull-right btn btn-default" id="sendEmail" >Send
+              <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
                 <i class="fa fa-arrow-circle-right"></i></button>
             </div>
           </div>

@@ -1,3 +1,7 @@
+<?php
+  include 'check_login.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -411,7 +415,9 @@
 						<div class="list-group">
 						<a href="#mymodal" class="list-group-item" data-toggle="modal" role="button">
 						<h4 class="list-group-item-heading">
-              <?php 
+              
+            </h4>
+					<?php 
                 include 'dbconnect.php';
                 $user = $_SESSION['login_user'];
                 $username = stripslashes($user);
@@ -419,15 +425,14 @@
                 $sql = "SELECT *  FROM `goals` WHERE `pm_username` LIKE '$username' AND `ngo_username` LIKE '$ngo_username'";
                 $result = mysql_query($sql, $conn);
                 while($row = mysql_fetch_assoc($result)) {
-                  $goal_id = row['goal_id'];
+                  $goal_id = $row['goals_id'];
 
                   $inner_sql = "SELECT *  FROM `strategies` WHERE `goal_id` LIKE '$goal_id'";
-                  $res = $result = mysql_query($inner_sql, $conn);
-                  $s_index = 0;
+                  $res = mysql_query($inner_sql, $conn);
+                  $s_index = 0; 
                   while ($inner_row = mysql_fetch_assoc($res)) {
                     $strat_desc = $inner_row['strat_description'];
                     $s_index = $s_index+1;
-
                     echo '<div class="modal fade" id="mymodal">
                             <div class="modal-dialog">
                               <div class="modal-content">
@@ -436,7 +441,6 @@
                                   <h4 class="modal-title">'.'Startegy'.$s_index.'</h4>
                                 </div>
                                 <div class="modal-body">
-                                  <h4>Text in modal body</h4>
                                   <p>'.$strat_desc.'</p>                                  
                                 </div>
                                 <div class="modal-footer">
@@ -453,10 +457,8 @@
                 }
 
               ?>
-            </h4>
-					
 					</div>
-						<a href="" class="btn btn-block btn-primary" target="_blank">More Info</a>
+						<a href="#mymodal" class="btn btn-block btn-primary" target="_blank">More Info</a>
 					</div>
 					
 				
